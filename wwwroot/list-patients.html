@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>WeCare</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <form action="search.html">
+                    <input type="search" name="q" placeholder="Search patient" />
+                    <button>Search</button>
+                </form>
+            </div>
+            <div class="col">
+                <a href="/create-patient.html" class="btn btn-primary">
+                    New patient
+                </a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+
+                <table class="table patients">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">First name</th>
+                            <th scope="col">Last name</th>
+                            <th scope="col">Social Security Number</th>
+                            <th scope="col"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Add rows dynamically -->
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+    </div>
+
+    <template id="patient-row">
+        <tr data-patient-id="1">
+            <th scope="row" class="id"></th>
+            <td class="first-name">
+                <a href=""></a>
+            </td>
+            <td class="last-name"></td>
+            <td class="social-security-number"></td>
+            <td>
+                <button class="btn btn-danger">
+                    Delete
+                </button>
+            </td>
+        </tr>
+    </template>
+
+    <script src="/js/list-patients.js"></script>
+</body>
+</html>

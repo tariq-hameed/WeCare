@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>WeCare</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+
+                <h1>Create Patients</h1>
+
+                <form>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="firstName">First name</label>
+                            <input type="text" class="form-control" name="firstName" id="firstName">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="lastName">Last name</label>
+                            <input type="text" class="form-control" name="lastName" id="lastName">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="socialSecurityNumber">Social Security Number</label>
+                            <input type="text" class="form-control" name="socialSecurityNumber" id="socialSecurityNumber">
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary">
+                        Add
+                    </button>
+                    <a href="/list-patients.html">
+                        Cancel
+                    </a>
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+    
+
+    <script src="/js/create-patient.js"></script>
+</body>
+</html>

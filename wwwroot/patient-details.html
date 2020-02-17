@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>WeCare</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+
+                <h1 class="patient-fullname"></h1>
+
+                <form>
+                    <div class="form-group">
+                        <label for="date">Date</label>
+                        <input type="datetime-local" class="form-control" name="date" id="date">
+                    </div>
+                    <div class="form-group">
+                        <label for="entry">Entry</label>
+                        <textarea class="form-control" id="entry" name="entry" rows="3"></textarea>
+                    </div>
+                    <button class="btn btn-primary">
+                        Add
+                    </button>
+                </form>
+
+                <table class="table journal-entries">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Date</th>
+                            <th scope="col">Entry</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Add rows dynamically -->
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+    </div>
+
+    <template id="journal-entry-row">
+        <tr>
+            <th scope="row" class="id"></th>
+            <td class="date"></td>
+            <td class="entry"></td>
+        </tr>
+    </template>
+
+    <script src="/js/patient-details.js"></script>
+</body>
+</html>

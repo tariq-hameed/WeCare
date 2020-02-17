@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using WeCare.Data;
 
 namespace WeCare.Migrations
 {
     [DbContext(typeof(WeCareContext))]
-    partial class WeCareContextModelSnapshot : ModelSnapshot
+    [Migration("20200208235015_AddInitialSeedData")]
+    partial class AddInitialSeedData
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -35,6 +37,13 @@ namespace WeCare.Migrations
                         .IsUnique();
 
                     b.ToTable("Journal");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            PatientId = 1
+                        });
                 });
 
             modelBuilder.Entity("WeCare.Data.Entities.JournalEntry", b =>
@@ -58,6 +67,35 @@ namespace WeCare.Migrations
                     b.HasIndex("JournalId");
 
                     b.ToTable("JournalEntry");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Date = new DateTime(2020, 1, 3, 12, 15, 0, 0, DateTimeKind.Unspecified),
+                            Entry = @"
+                Patient feels uneasy and restless. Administered 5 ml of valium.
+            ",
+                            JournalId = 1
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Date = new DateTime(2020, 1, 14, 8, 30, 0, 0, DateTimeKind.Unspecified),
+                            Entry = @"
+                Patient complaining about not being able to sleep.
+            ",
+                            JournalId = 1
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Date = new DateTime(2020, 1, 23, 15, 15, 0, 0, DateTimeKind.Unspecified),
+                            Entry = @"
+                Patient returns for checkup, feeling much better now.
+            ",
+                            JournalId = 1
+                        });
                 });
 
             modelBuilder.Entity("WeCare.Data.Entities.Patient", b =>
@@ -79,6 +117,15 @@ namespace WeCare.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Patient");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            FirstName = "Frans",
+                            LastName = "Engström",
+                            SocialSecurityNumber = "890101-2010"
+                        });
                 });
 
             modelBuilder.Entity("WeCare.Data.Entities.Journal", b =>
